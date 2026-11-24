@@ -1,0 +1,28 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy as sc
+
+'''
+Escrivim les constant que necessitarem pel nostre problema.
+'''
+rho = 1081
+cv = 3698
+kappa = 0.56
+sigma = 0.472
+L_tot = 0.02
+L_zona_malalta = 0.005
+V_eff = 40/np.sqrt(2)
+Tc = 36.5
+
+'''
+variables q calculem o definim per adimensionalitzar.
+'''
+Pext = sigma*(V_eff/L_tot)**2
+alpha = kappa/(cv*rho)
+x0 = L_tot
+t0 = L_tot**2/alpha
+T0 = sigma*V_eff**2/kappa
+
+print(f"Difusivitat térmica (alpha): {alpha:.4e} m^2/s")
+print(f"Temps característic (t0): {t0:.2f} s ({t0/60:.2f} min)")
+print(f"Temperatura característica (T0): {T0:.2f} °C\n")
